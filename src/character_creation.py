@@ -1,10 +1,17 @@
-import time
-
 #  entire character creation for both player and companion
 
-user_bio = []
+import time
+import colors
 
-user_name = input("Name: ")
+
+# Player config
+while True:
+    user_name = input("Name: ")
+    if user_name == "":
+        print("Pick an actual name.")
+    else:
+        break
+
 while True:
     try:
         user_age = int(input("Age: "))
@@ -14,6 +21,7 @@ while True:
             print("Please be of at least 16 years of age...")
     except ValueError:
         print("Please input an actual integer as an age.")
+
 while True:
     user_gender = input("Gender: ").lower()
     if user_gender == 'male':
@@ -22,23 +30,32 @@ while True:
         break
     else:
         print("Casshu! Male or female!")
-user_hair_color = input("Hair color: ").lower()
-user_eye_color = input("Eye color: ").lower()
 
 
-user_bio.append(user_name)
-user_bio.append(user_age)
-user_bio.append(user_gender)
-user_bio.append(user_hair_color)
-user_bio.append(user_eye_color)
+while True:
+    user_hair_color = input("Hair color: ").lower()
+    if user_hair_color not in colors.colors:
+        print("Choose an actual color.")
+    else:
+        break
+
+while True:
+    user_eye_color = input("Eye color: ").lower()
+    if user_eye_color not in colors.colors:
+        print("Choose an actual color.")
+    else:
+        break
 
 
 
+# Companion's config
+while True:
+    name = input("Companion's name: ")
+    if name == "":
+        print("Pick an actual name.")
+    else:
+        break
 
-
-companion_bio = []
-
-name = input("Companion's name: ")
 while True:
     try:
         age = int(input("Companion's age: "))
@@ -48,6 +65,7 @@ while True:
             print("Please have your companion be at least 16 years old...")
     except ValueError:
         print("Please input an actual integer as an age.")
+
 while True:
     gender = input("Companion's gender: ").lower()
     if gender == 'male':
@@ -56,20 +74,24 @@ while True:
         break
     else:
         print("Casshu! Male or female!")
-hair_color = input("Companion's hair color: ").lower()
-eye_color = input("Companion's eye color: ").lower()
 
+while True:
+    hair_color = input("Companion's hair color: ").lower()
+    if hair_color not in colors.colors:
+        print("Choose an actual color.")
+    else:
+        break
 
-companion_bio.append(name)
-companion_bio.append(age)
-companion_bio.append(gender)
-companion_bio.append(hair_color)
-companion_bio.append(eye_color)
+while True:
+    eye_color = input("Companion's eye color: ").lower()
+    if eye_color not in colors.colors:
+        print("Choose an actual color.")
+    else:
+        break
+
 
 companion_hearts_base = 100
 companion_hearts = {"Companion Hearts": companion_hearts_base}
-
-
 
 
 if user_gender == 'female':
