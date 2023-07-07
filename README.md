@@ -3,7 +3,7 @@ A short demo/teaser for a text-based, choose-your-own-adventure, RPG.
 
 ## Demo Set Up:
 1. Download a zip of the [main branch](https://gitlab.com/yggdrasil-software-projects/the-knave-demo/-/tree/main?ref_type=heads).
-2. Unzip the zip; you can locate the project directory anywhere.
+2. Unzip the zip; you can locate the extracted directory anywhere.
 3. Navigate into the project directory and go inside of the 'dist' directory.
 
 ## How To Run Demo:
