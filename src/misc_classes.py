@@ -38,22 +38,22 @@ class Music:
         self.track_channel.set_volume(self.volume)
 
 class Sound_effect:
-    def __init__(self, wav, channel, wav_channel, loops, maxtime, fade_ms):
-        self.wav = wav
+    def __init__(self, audio, channel, audio_channel, loops, maxtime, fade_ms):
+        self.audio = audio
         self.channel = channel
-        self.wav_channel = wav_channel
+        self.audio_channel = audio_channel
         self.loops = loops
         self.maxtime = maxtime
         self.fade_ms = fade_ms
 
-        self.wav = pygame.mixer.Sound(f'../media/sounds/{self.wav}.wav')
-        self.wav_channel = pygame.mixer.Channel(self.channel)
-        self.wav_channel.play(self.wav, loops=self.loops, maxtime=self.maxtime, fade_ms=self.fade_ms)
+        self.audio = pygame.mixer.Sound(f'../media/sounds/{self.audio}.mp3')
+        self.audio_channel = pygame.mixer.Channel(self.channel)
+        self.audio_channel.play(self.audio, loops=self.loops, maxtime=self.maxtime, fade_ms=self.fade_ms)
     
     def fade_out(self, mseconds):
         self.mseconds = mseconds
-        self.wav_channel.fadeout(self.mseconds)
+        self.audio_channel.fadeout(self.mseconds)
 
     def set__volume(self, volume):
         self.volume = volume
-        self.wav_channel.set_volume(self.volume)
+        self.audio_channel.set_volume(self.volume)
