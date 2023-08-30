@@ -2,3 +2,4 @@ __pycache__
 /build/
 test.py
 "The Knave - Demo.spec"
+error_log.txt
