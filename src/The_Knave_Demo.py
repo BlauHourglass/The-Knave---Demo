@@ -2,7 +2,7 @@ import time
 import pygame
 import datetime
 import character_creation
-# import misc_classes
+import misc_classes
 
 # channel 0 = knave_st
 # channel 1 = birds_chirping
