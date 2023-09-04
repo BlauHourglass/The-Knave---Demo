@@ -1,8 +1,8 @@
 import time
-import character_creation
-import misc_classes
 import pygame
 import datetime
+import character_creation
+# import misc_classes
 
 # channel 0 = knave_st
 # channel 1 = birds_chirping
@@ -247,7 +247,7 @@ try:
 	time.sleep(1)
 	exit()
 
-except (Exception, KeyboardInterrupt) as e:
+except Exception as e:
 	try:
 		error_log = open("error_log.txt", "a")
 		error_log.close()
@@ -256,4 +256,15 @@ except (Exception, KeyboardInterrupt) as e:
 		error_log.close()
 	with open("error_log.txt", "a") as error_log:
 		error_log.write(f"{current_time}: Main Script: {e}\n")
-	error_message = input("Something has gone wrong with the main program. Please press \"enter\" to quit.")
+	error_message = input("\nSomething has gone wrong with the main program. Please press \"enter\" to quit.")
+
+except KeyboardInterrupt:
+	try:
+		error_log = open("error_log.txt", "a")
+		error_log.close()
+	except:
+		error_log = open("error_log.txt", "x")
+		error_log.close()
+	with open("error_log.txt", "a") as error_log:
+		error_log.write(f"{current_time}: Main Script: User has interrupted program with a keyboard shortcut.\n")
+	error_message = input("\nSomething has gone wrong with the main program. Please press \"enter\" to quit.")

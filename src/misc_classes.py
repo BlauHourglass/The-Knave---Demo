@@ -62,7 +62,7 @@ try:
             self.volume = volume
             self.audio_channel.set_volume(self.volume)
 
-except (Exception, KeyboardInterrupt) as e:
+except Exception as e:
 	try:
 		error_log = open("error_log.txt", "a")
 		error_log.close()
@@ -71,4 +71,15 @@ except (Exception, KeyboardInterrupt) as e:
 		error_log.close()
 	with open("error_log.txt", "a") as error_log:
 		error_log.write(f"{current_time}: Misc Classes: {e}\n")
-	error_message = input("Something has gone wrong with the main program. Please press \"enter\" to quit.")
+	error_message = input("\nSomething has gone wrong with the classes script. Please press \"enter\" to quit.")
+
+except KeyboardInterrupt:
+	try:
+		error_log = open("error_log.txt", "a")
+		error_log.close()
+	except:
+		error_log = open("error_log.txt", "x")
+		error_log.close()
+	with open("error_log.txt", "a") as error_log:
+		error_log.write(f"{current_time}: Misc Classes: User has interrupted program with a keyboard shortcut.\n")
+	error_message = input("\nSomething has gone wrong with the classes script. Please press \"enter\" to quit.")
