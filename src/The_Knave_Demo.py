@@ -245,7 +245,6 @@ try:
 	Text("-")
 	Text("(END OF DEMO, \"The Knave\")")
 	time.sleep(1)
-	exit()
 
 except Exception as e:
 	try:
@@ -268,3 +267,5 @@ except KeyboardInterrupt:
 	with open("error_log.txt", "a") as error_log:
 		error_log.write(f"{current_time}: Main Script: User has interrupted program with a keyboard shortcut.\n")
 	error_message = input("\nSomething has gone wrong with the main program. Please press \"enter\" to quit.")
+
+exit()
