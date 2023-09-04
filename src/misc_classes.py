@@ -64,11 +64,22 @@ try:
 
 except Exception as e:
 	try:
-		error_log = open("error_log.txt", "w")
+		error_log = open("error_log.txt", "a")
 		error_log.close()
 	except:
 		error_log = open("error_log.txt", "x")
 		error_log.close()
 	with open("error_log.txt", "a") as error_log:
-		error_log.write(f"{current_time}: Misc Classes: {e}")
-	error_message = input("Something has gone wrong with the main program. Please press \"enter\" to quit.")
+		error_log.write(f"{current_time}: Misc Classes: {e}\n")
+	error_message = input("\nSomething has gone wrong with the classes script. Please press \"enter\" to quit.")
+
+except KeyboardInterrupt:
+	try:
+		error_log = open("error_log.txt", "a")
+		error_log.close()
+	except:
+		error_log = open("error_log.txt", "x")
+		error_log.close()
+	with open("error_log.txt", "a") as error_log:
+		error_log.write(f"{current_time}: Misc Classes: User has interrupted program with a keyboard shortcut.\n")
+	error_message = input("\nSomething has gone wrong with the classes script. Please press \"enter\" to quit.")

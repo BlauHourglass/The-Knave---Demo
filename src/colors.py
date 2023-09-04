@@ -144,5 +144,9 @@ colors = [
     "gold",
     "purple",
     "cosmos",
-    
+    "transparent hazel",
+    "transparent brown",
+    "transparent gray",
+    "transparent green",
+    "transparent blue",    
 ]
